@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root{--bg:#f8fafc;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--primary:#0a7cff}
+	*{box-sizing:border-box}
+	html,body{padding:0;margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:var(--bg);color:var(--text)}
+	a{color:inherit;text-decoration:none}
+	button{cursor:pointer}
+	input,select,button{font:inherit}
+}
+
+@layer components {
+	.card{ @apply border border-[var(--border)] rounded-xl p-4 bg-white shadow-sm; }
+	/* Use Tailwind's built-in `grid` utility; avoid redefining `.grid` */
+	.products-grid{ grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); }
+	.row{ @apply flex items-center gap-3; }
+	.btn{ @apply px-3 py-2 border border-[var(--border)] rounded-md bg-white transition-shadow hover:shadow-sm; }
+	.btn.primary{ @apply bg-brand border-brand text-white hover:shadow; }
+	.table{ @apply w-full border-collapse; }
+	.table th, .table td{ @apply p-2 border-b border-[var(--border)] text-left; }
+}
